@@ -1467,7 +1467,7 @@ img.mfp-img {
 
 [class^=custom-], [class*=' custom-'] {
   font-variant: normal;
-  font-family: icomoon!important;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
@@ -2865,7 +2865,7 @@ a.menu-item-active>span {
   margin-top: -.5rem;
   margin-right: .25rem;
   color: #0070af;
-  font-family: icomoon;
+  
   font-size: 1.5rem;
   content: '\e91c';
   transition: all .2s
@@ -3484,7 +3484,7 @@ a.menu-item-active>span {
     right: .5rem;
     z-index: 2;
     color: #00679b;
-    font-family: icomoon;
+    
     font-size: 2rem;
     background-color: #fff;
     content: '\e919'
@@ -4427,7 +4427,7 @@ a.menu-item-active>span {
   height: 2.5rem;
   padding: .25rem;
   color: #fff;
-  font-family: icomoon;
+  
   font-size: 2rem;
   line-height: 1;
   background-color: #00679b;
