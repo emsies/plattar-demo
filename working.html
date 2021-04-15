@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" media="all"
         href="https://www.la-z-boy.co.nz/static/version1616552672/frontend/Space/lazboy/en_NZ/css/styles-m.css" />
     <link rel="stylesheet" type="text/css" media="all"
-        href="https://www.la-z-boy.co.nz/static/version1616552672/frontend/Space/lazboy/en_NZ/css/styles-l.css" />
+        href="./index_files/styles-l.css" />
     <link rel="stylesheet" type="text/css" media="all"
         href="https://www.la-z-boy.co.nz/static/version1616552672/frontend/Space/lazboy/en_NZ/Amasty_Storelocator/vendor/chosen/chosen.min.css" />
     <link rel="stylesheet" type="text/css" media="all"
@@ -77,7 +77,7 @@
     <link rel="stylesheet" type="text/css" media="print"
         href="https://www.la-z-boy.co.nz/static/version1616552672/frontend/Space/lazboy/en_NZ/css/print.css" />
     <script type="72c27c9ffc42671103542b4e-text/javascript"
-        src="https://www.la-z-boy.co.nz/static/version1616552672/_cache/merged/6dc9584a03fc3df250dda47068fbb924.js">
+        src="./index_files/6dc9584a03fc3df250dda47068fbb924.js">
     </script>
     <link rel="canonical" href="https://www.la-z-boy.co.nz/duor-colorado-3-seater-twin-power-recliner" />
     <link rel="icon" type="image/x-icon"
@@ -1080,10 +1080,12 @@
                                 <div class="product media"><a id="gallery-prev-area" tabindex="-1"></a>
                                     <div class="action-skip-wrapper">
                                     </div>
+                                    <div class="prod__wrapper">
                                     <div class="product__slider gallery" id="productSlider">
                                         <div class="item">
                                             <img src="https://www.la-z-boy.co.nz/media/catalog/product/cache/bd6cc75e01c91739dae3079b05f7c0a8/P/4/P4130-32PRH_10325055001.jpg"
                                                 alt="P4130-32PRH_10325055001">
+                                                
                                         </div>
                                         <div class="item">
                                             <img src="https://www.la-z-boy.co.nz/media/catalog/product/cache/bd6cc75e01c91739dae3079b05f7c0a8/P/4/P4130-32PRH_30325055011.jpg"
@@ -1099,17 +1101,20 @@
                                         </div>
                                        
                                     </div>
-                                    <div class="plattar-code" onclick="startAR()">
+                                    <div id="plattar-code" class="plattar-code" onclick="startAR()">
                                         <iframe class="plattar-frame" id="plattar-frame"
-                                            title="plattar frame" name="plattar-frame"></iframe>
-                                            <img class="ar-button" id="buttonAR"
-                                            src="./index_files/view-in-ar.png" alt="view in AR button" style="opacity: 1;">
-                                            <img class="ar-button showing" id="button3D"
-                                            alt="plattar frame"
-                                            src="./index_files/view-in-3d.png" style="opacity: 1;">
-                                           
+                                            name="plattar-frame"></iframe> <img
+                                            class="ar-button" id="buttonAR"
+                                            src="./index_files/view-in-ar.png"
+                                            style="opacity: 1;"> <img
+                                            class="ar-button showing" id="button3D"
+                                            src="./index_files/view-in-3d.png"
+                                            style="opacity: 1;"> 
                                         <style type="text/css">
-                                        
+
+                                        .prod__wrapper {
+                                            position: relative;
+                                        }
                                             .ar-button {
                                                 position: absolute;
                                                 bottom: 0;
@@ -1120,7 +1125,13 @@
                                             }
 
                                             .plattar-code {
-                                                position: relative;
+                                           
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                z-index: 10;
+                                                width: 100%;
+                                                height: 100%;
                                             }
 
                                             .ar-button.visible {
@@ -1150,14 +1161,12 @@
                                         </style>
                                         <script
                                             src="https://app.plattar.com/webgleditor/embed/plattar-1.0.0.min.js">
-                                        </script>
+                                            </script>
                                         <script type="text/javascript">
                                             var integration = new PlattarIntegration();
 
 
-                                            integration.init('100e1980-9c1b-11eb-bcbd-8d05f7a90ac6', function () {
-                                                console.log('relax');
-                                            });
+                                            integration.init('100e1980-9c1b-11eb-bcbd-8d05f7a90ac6');
 
                                             if (integration.canAugment) {
                                                 // show ar
@@ -1168,15 +1177,17 @@
                                             }
 
                                             function startAR() {
+                                                var wrap = document.getElementById('plattar-code').classList.add('visible');
                                                 if (integration.canAugment) {
                                                     integration.startAugment();
                                                 } else {
                                                     var iframe = document.getElementById('plattar-frame');
-                                                    iframe.src = integration.embedUrl; // + '&z=350&y=275';
+                                                    iframe.src = integration.embedUrl;// + '&z=350&y=275';
                                                     iframe.classList.add('visible');
                                                 }
                                             }
                                         </script>
+                                    </div>
                                     </div>
 
                                     <!-- View in 3D-->
