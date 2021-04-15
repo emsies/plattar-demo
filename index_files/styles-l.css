@@ -11790,9 +11790,7 @@ body.modal-open #at4-share, body.modal-open #at4-share2 {
 .product-social-links .download {
   margin-right: 0
 }
-.product-social-links .download:before {
-  content: '\e914'
-}
+
 .product-social-links .brand-content {
   display: flex;
   align-items: center;
