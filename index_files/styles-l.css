@@ -2699,7 +2699,7 @@ a.menu-item-active>span {
   color: #0070af;
   
   font-size: 1.5rem;
-  content: '\e91c';
+  
   transition: all .2s
 }
 @media all and (min-width:991px) {
@@ -5533,28 +5533,28 @@ a.menu-item-active>span {
 }
 .categories-strip__container a .content i.custom-recliner:before, .categories-strip__container a .content i.custom-recliners:before {
   font-size: 3.125rem;
-  content: '\e909'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-recliner:before, .ct-view-homepage_top_content .categories-strip__container a .content i.custom-recliners:before {
   font-size: 3.125rem
 }
 .categories-strip__container a .content i.custom-suite:before, .categories-strip__container a .content i.custom-suites:before {
   font-size: 2.5rem;
-  content: '\e908'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-suite:before, .ct-view-homepage_top_content .categories-strip__container a .content i.custom-suites:before {
   font-size: 3.75rem
 }
 .categories-strip__container a .content i.custom-sofa:before, .categories-strip__container a .content i.custom-sofas:before {
   font-size: 2.6875rem;
-  content: '\e90a'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-sofa:before, .ct-view-homepage_top_content .categories-strip__container a .content i.custom-sofas:before {
   font-size: 2.6875rem
 }
 .categories-strip__container a .content i.custom-chair:before, .categories-strip__container a .content i.custom-chairs:before {
   font-size: 3.5rem;
-  content: '\e90c'
+  
 }
 .category-dining .categories-strip__container a .content i.custom-chair:before, .category-dining .categories-strip__container a .content i.custom-chairs:before {
   font-size: 3.5rem
@@ -5564,35 +5564,35 @@ a.menu-item-active>span {
 }
 .categories-strip__container a .content i.custom-lift-chairs:before {
   font-size: 3.5rem;
-  content: '\e907'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-lift-chairs:before {
   font-size: 3.5rem
 }
 .categories-strip__container a .content i.custom-sideboard:before {
   font-size: 2.5rem;
-  content: '\e90d'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-sideboard:before {
   font-size: 2.5rem
 }
 .categories-strip__container a .content i.custom-footstools-ottomans:before {
   font-size: 2.5rem;
-  content: '\e906'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-footstools-ottomans:before {
   font-size: 2.5rem
 }
 .categories-strip__container a .content i.custom-nordic:before, .categories-strip__container a .content i.custom-nordic-collection:before {
   font-size: 3.75rem;
-  content: '\e90e'
+  
 }
 .ct-view-homepage_top_content .categories-strip__container a .content i.custom-nordic:before, .ct-view-homepage_top_content .categories-strip__container a .content i.custom-nordic-collection:before {
   font-size: 3.75rem
 }
 .categories-strip__container a .content i.custom-tables:before {
   font-size: 2.875rem;
-  content: '\e90b'
+  
 }
 .category-dining .categories-strip__container a .content i.custom-tables:before {
   font-size: 2.875rem
@@ -5602,7 +5602,7 @@ a.menu-item-active>span {
 }
 .categories-strip__container a .content i.custom-coffee-tables:before {
   font-size: 3.125rem;
-  content: '\e912'
+  
 }
 .category-occassional .categories-strip__container a .content i.custom-coffee-tables:before {
   font-size: 3.125rem
@@ -5612,7 +5612,7 @@ a.menu-item-active>span {
 }
 .categories-strip__container a .content i.custom-lamp-side-tables:before {
   font-size: 3.3125rem;
-  content: '\e911'
+
 }
 .category-occassional .categories-strip__container a .content i.custom-lamp-side-tables:before {
   font-size: 3.3125rem
@@ -5622,7 +5622,7 @@ a.menu-item-active>span {
 }
 .categories-strip__container a .content i.custom-entertainment-units:before {
   font-size: 2.5rem;
-  content: '\e90d'
+
 }
 .category-occassional .categories-strip__container a .content i.custom-entertainment-units:before {
   font-size: 2.5rem
@@ -6464,7 +6464,7 @@ a.menu-item-active>span {
     right: 1.875rem;
     color: #000;
     font-size: .875rem;
-    content: '\e90f'
+    
   }
   .filter.active .filter-content {
     display: block
@@ -9622,13 +9622,11 @@ a.menu-item-active>span {
     display: inline-block;
     color: #7297a9;
     font-size: 1rem;
-    content: '\ea0a';
+
     transform: translate(0, -50%);
     transition: all .3s
   }
-  .catalog-product-view .product__tabs .title a.activeMobile:after {
-    content: '\ea0b'
-  }
+  
 }
 @media all and (min-width:991px) {
   .catalog-product-view .product__tabs .title a {
@@ -10259,7 +10257,7 @@ a.menu-item-active>span {
   display: inline-block;
   color: #7297a9;
   font-size: 1.5rem;
-  content: '\ea0a';
+
   transform: translate(0, -50%);
   transition: all .3s
 }
@@ -10479,7 +10477,7 @@ a.menu-item-active>span {
   font-size: 1.5rem;
   background: #7297a9;
   border-radius: 50%;
-  content: '\e91d';
+
   transform: translate(-50%, -50%);
   transition: all .3s
 }
@@ -10532,9 +10530,7 @@ a.menu-item-active>span {
 .catalog-product-view .product-options-wrapper .product__options-tabs-content .product-coverings__types li .product-coverings__swatches .swatch-opt .swatch-attribute-options .swatch-option:hover {
   border: 4px solid #fff
 }
-.catalog-product-view .product-options-wrapper .product__options-tabs-content .product-coverings__types li.active .product-coverings__title:after {
-  content: '\ea0b'
-}
+
 .catalog-product-view .product-options-wrapper .product__options-tabs-content .product-coverings__types li.active .product-coverings__swatches {
   display: block;
   transition: .2s all
@@ -10689,7 +10685,7 @@ a.menu-item-active>span {
   display: inline-block;
   color: #7297a9;
   font-size: 1.5rem;
-  content: '\ea0a';
+
   transform: translate(0, -50%);
   transition: all .3s
 }
@@ -10768,7 +10764,7 @@ a.menu-item-active>span {
   font-size: 1.5rem;
   background: #7297a9;
   border-radius: 50%;
-  content: '\e91d';
+
   transform: translate(-50%, -50%);
   transition: all .3s
 }
@@ -10777,9 +10773,7 @@ a.menu-item-active>span {
     font-size: 2rem
   }
 }
-.catalog-product-view .product-options-wrapper .product__options-tabs-content .product-opt__types li.active .product-opt__types--title:after {
-  content: '\ea0b'
-}
+
 .catalog-product-view .product-options-wrapper .product__options-tabs-content .product-opt__types li.active .product-opt__items {
   display: flex;
   padding-bottom: 2rem
