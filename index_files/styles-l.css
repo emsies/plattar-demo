@@ -4375,9 +4375,7 @@ a.menu-item-active>span {
 .slick-arrow.slick-hidden {
   display: none
 }
-.slick-loading .slick-list {
-  background: #fff slick-image-url("ajax-loader.gif") center center no-repeat
-}
+
 .slick-prev, .slick-next {
   position: absolute;
   top: 15%;
@@ -4451,12 +4449,7 @@ a.menu-item-active>span {
   right: 0;
   left: auto
 }
-.slick-prev:before {
-  content: ""
-}
-[dir=rtl] .slick-prev:before {
-  content: ""
-}
+
 .slick-next {
   right: 0;
   transform: rotate(-90deg) translate(0, -50%)
@@ -4465,12 +4458,7 @@ a.menu-item-active>span {
   right: auto;
   left: 0
 }
-.slick-next:before {
-  content: ""
-}
-[dir=rtl] .slick-next:before {
-  content: ""
-}
+
 .slick-disabled {
   display: none!important
 }
@@ -6262,19 +6250,7 @@ a.menu-item-active>span {
 .stockists__form .select-wrapper-fix {
   position: relative
 }
-@-moz-document url-prefix('') {
-  .stockists__form .select-wrapper-fix:after {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    display: block;
-    width: 20px;
-    height: 100%;
-    margin: 0 0 0 -1.25rem;
-    background: #a6717d;
-    content: ''
-  }
-}
+
 .stockists__form select {
   width: 100%;
   padding: 1.375rem 1.5rem;
