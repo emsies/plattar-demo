@@ -2544,14 +2544,7 @@ textarea.input-text.validation-failed {
   }
 }
 @media all and (min-width:991px) {
-  .nav-sections .navigation>ul>li.parent>a:after, .nav-sections .navigation>ul>li.mega>a:after {
-    position: absolute;
-    color: #7297a9;
-    font-family: icomoon!important;
-    font-size: 1.375rem;
-    content: '\e916';
-    transition: all .2s
-  }
+ 
   .nav-sections .navigation>ul>li.parent>a:hover, .nav-sections .navigation>ul>li.mega>a:hover {
     color: #00679b
   }
