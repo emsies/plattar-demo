@@ -1148,6 +1148,70 @@
                                             #viewinar.visible {
                                                 display: block;
                                             }
+
+                                            .variations_form .variations .value select {
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    
+                    border: 2px solid #ccc;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    height: auto;
+                    margin-bottom: 5px;
+                    padding: 8px 25px 8px 10px;
+                    width: auto;
+                  }
+
+                  .variations div.variation .reset_variations[style*="visibility: hidden;"] {
+                    display: none !important;
+                  }
+
+                  .variations div.variation .reset_variations {
+                    background-color: #b8b8b8;
+                    border-radius: 50px;
+                    box-shadow: none;
+                    color: #fff;
+                    display: inline-block !important;
+                    font-size: 12px;
+                    line-height: 1;
+                    margin-top: 15px;
+                    padding: 10px 12px 8px 14px;
+                    text-transform: capitalize;
+                  }
+
+                  .variation_buttons {
+                      display: flex;
+                  }
+
+                  .variation_buttons a{
+                      display: inline-block;
+                      border-radius: 50%;
+                      margin-right: 10px;
+                  }
+
+                  .variation_button span {
+                    border-radius: 50%;
+                  }
+
+
+
+                  .variations div.variation .reset_variations::before {
+                    background-color: #f73939;
+                    border-radius: 50px;
+                    content: "x";
+                    display: inline-block;
+                    font-size: 11px;
+                    height: 12px;
+                    left: -5px;
+                    line-height: 10px;
+                    position: relative;
+                    text-align: center;
+                    text-transform: none;
+                    top: -1px;
+                    width: 12px;
+                  }
+
                                         </style>
                                         <iframe id='plattar-frame' width="100%" height="100%" frameBorder="0"
                                             allow="camera; vr; autoplay" allowfullscreen></iframe>
@@ -1470,7 +1534,7 @@
                                     </div>
                                 </div>
                                 <div class="variation_buttons_wrapper">
-                                    <div style="display: block;" id="pa_color_buttons" class="variation_buttons" data-children-count="0">
+                                    <div id="pa_color_buttons" class="variation_buttons" data-children-count="0">
                                       <a href="javascript:void(0);" class="position_before variation_button selected" id="bronze" rel="pa_color">
                                         <span onclick='changeVariation("red");' class="phoen_swatches phoen_type_color" style="height: 32px; width: 32px; display: block; background-color: red"></span><span class="phoen_below_text">Red</span>
                                       </a>
