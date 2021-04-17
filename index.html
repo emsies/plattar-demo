@@ -1080,7 +1080,7 @@
                                     </div>
                                     <div class="prod__wrapper">
                                         <div class="product__slider gallery" id="productSlider">
-                                            <div class="item">
+                                            <div class="item zoomImg">
                                                 <img src="https://www.la-z-boy.co.nz/media/catalog/product/cache/bd6cc75e01c91739dae3079b05f7c0a8/P/4/P4130-32PRH_10325055001.jpg"
                                                     alt="P4130-32PRH_10325055001">
 
@@ -1099,6 +1099,172 @@
                                             </div>
 
                                         </div>
+                                        <script type="text/javascript">
+                                            (function ($) {
+                                              jQuery(document).ready(function () {
+                                                jQuery(".phoen_select").select2();
+                          
+                                                /* jQuery("body").on("mouseover",".phoen_swatches",function(){
+                          
+                                  if(jQuery(".variations_form .variations .variation").length < 2){
+                                      jQuery(this).closest("a").trigger('click');
+                                  }
+                              }); */
+                          
+                                                jQuery(".phoen_demo").hide();
+                          
+                                                if (jQuery(".variations_form").length) {
+                                                  makealloptions();
+                          
+                                                  var chocesMade = true;
+                          
+                                                  jQuery(".variations_form .variation select").each(function (index, element) {
+                                                    // alert(212);
+                                                    if (jQuery(this).val() == "") {
+                                                      chocesMade = false;
+                                                    }
+                                                  });
+                          
+                                                  if (chocesMade) {
+                                                    makealloptions();
+                                                  }
+                                                }
+                          
+                                                jQuery(document).on("click", ".reset_variations", function () {
+                                                  jQuery(".selected").each(function (index, element) {
+                                                    jQuery(this).removeClass("selected").addClass("unselected");
+                                                  });
+                                                });
+                          
+                                                jQuery(document).on("click", ".variation_button", function () {
+                                                  if (jQuery("#" + jQuery(this).attr("rel")).val() == jQuery(this).attr("id")) {
+                                                    jQuery("#" + jQuery(this).attr("rel")).val("");
+                          
+                                                    jQuery(this).removeClass("selected").addClass("unselected");
+                                                  } else {
+                                                    jQuery("#" + jQuery(this).attr("rel")).val(jQuery(this).attr("id"));
+                          
+                                                    jQuery("#" + jQuery(this).attr("rel") + "_buttons .variation_button")
+                                                      .removeClass("selected")
+                                                      .addClass("unselected");
+                          
+                                                    jQuery(this).removeClass("unselected").addClass("selected");
+                          
+                                                    var notTarget = jQuery(this).attr("rel") + "_" + jQuery(this).attr("id") + "_description";
+                          
+                                                    jQuery("#" + jQuery(this).attr("rel") + "_descriptions .variation_description").each(function () {
+                                                      if (jQuery(this).attr("id") != notTarget) {
+                                                        jQuery(this).hide();
+                                                      }
+                                                    });
+                                                  }
+                          
+                                                  jQuery("#" + jQuery(this).attr("rel")).change();
+                                                });
+                          
+                                                jQuery(document).on("click", ".variation_button", function () {
+                                                  // alert();
+                                                  jQuery(".selected").each(function () {
+                                                    jQuery(this).closest(".variation_button").find(".phoen_term_label").css("display", "block");
+                                                  });
+                          
+                                                  jQuery(".unselected").each(function () {
+                                                    jQuery(this).closest(".variation_button").find(".phoen_term_label").css("display", "none");
+                                                  });
+                                                });
+                          
+                                                jQuery(".variation_descriptions_wrapper:first-child").append("");
+                          
+                                                jQuery(document).on("change", ".variations_form select", function () {
+                                                  makealloptions();
+                                                });
+                          
+                                                function makealloptions() {
+                                                  // alert(212);
+                                                  jQuery(".variations_form select").each(function (index, element) {
+                                                    var curr_select = jQuery(this).attr("id");
+                          
+                                                    if (jQuery(this).attr("data-type") == "default") {
+                                                      var type = "none";
+                                                    } else {
+                                                      var type = "block";
+                                                    }
+                          
+                                                    if (jQuery("#" + curr_select + "_buttons").length) {
+                                                      if (!jQuery("#" + curr_select + "_buttons").find(".selected").length) {
+                                                        jQuery("#" + curr_select + "_buttons").html("");
+                          
+                                                        jQuery("#" + curr_select + "_descriptions .variation_description")
+                                                          .stop(true, true)
+                                                          .slideUp("fast");
+                                                      }
+                                                    } else {
+                                                      jQuery(
+                                                        '<div class="variation_buttons_wrapper"><div style="display:' +
+                                                          type +
+                                                          '" id="' +
+                                                          curr_select +
+                                                          '_buttons" class="variation_buttons"></div></div><div class="variation_descriptions_wrapper"><div id="' +
+                                                          curr_select +
+                                                          '_descriptions" class="variation_descriptions"></div></div>'
+                                                      ).insertBefore(jQuery(this));
+                                                    }
+                          
+                                                    jQuery("#" + jQuery(this).attr("id") + " option").each(function (index, element) {
+                                                      if (jQuery(this).val() != "") {
+                                                        // Get Image
+                                                        var image = jQuery("#" + curr_select + "_" + jQuery(this).val() + "_description .image img");
+                          
+                                                        if (jQuery("#" + jQuery(this).val()).length && jQuery("#" + jQuery(this).val()).hasClass("variation_button")) {
+                                                          jQuery("#" + jQuery(this).val()).show();
+                                                        } else {
+                                                          //var postion_class='position_before';
+                          
+                                                          var phoen_only_radio = "";
+                          
+                                                          if (jQuery(this).attr("data-type") == "radio" || jQuery(this).attr("data-type") == "phoen_radio") {
+                                                            phoen_only_radio = " phoen_only_radio ";
+                                                          }
+                                                          jQuery("#" + curr_select + "_buttons").append(
+                                                            '<a href="javascript:void(0);" class=" position_before  variation_button' +
+                                                              (jQuery("#" + curr_select).val() == jQuery(this).val() ? " selected" : " unselected") +
+                                                              phoen_only_radio +
+                                                              '" id="' +
+                                                              jQuery(this).val() +
+                                                              '"  rel="' +
+                                                              curr_select +
+                                                              '">' +
+                                                              jQuery("." + jQuery(this).val() + "_image").html() +
+                                                              "</a>"
+                                                          );
+                          
+                                                          if (jQuery("#" + curr_select).val() == jQuery(this).val()) {
+                                                            jQuery("#" + curr_select + "_" + jQuery(this).val() + "_description .var-notice")
+                                                              .stop(true, true)
+                                                              .hide();
+                          
+                                                            jQuery("#" + curr_select + "_" + jQuery(this).val() + "_description")
+                                                              .stop(true, true)
+                                                              .slideDown("fast");
+                                                          }
+                                                        }
+                                                      } else {
+                                                        if (jQuery("#" + curr_select + " option").length == 1 && jQuery("#" + curr_select + ' option[value=""]').length) {
+                                                          alert("Combination Not Avalable");
+                          
+                                                          // jQuery( "#"+curr_select+'_buttons' ).append( 'Combination Not Avalable <a href="javascript:void(0);" class="variation_reset">Reset</a>' );
+                                                        }
+                                                      }
+                                                    });
+                                                  });
+                          
+                                                  jQuery("form.variations_form").fadeIn();
+                          
+                                                  jQuery(".product_meta").fadeIn();
+                                                }
+                                              });
+                                            })(jQuery);
+                                          </script>
                                         <style type="text/css">
                                             .prod__wrapper {
                                                 position: relative;
@@ -1188,10 +1354,17 @@
                       display: inline-block;
                       border-radius: 50%;
                       margin-right: 10px;
+                      font-family: "Muli", "Arial", "sans-serif";
+                        font-weight: normal;
+                        font-size: 14px;
+                        color: #595959;
                   }
 
                   .variation_button span {
                     border-radius: 50%;
+                    height: 32px; 
+                    width: 32px; 
+                    display: block; 
                   }
 
 
@@ -1233,7 +1406,9 @@
                                             comms.init('plattar-frame');
                                             var integration = new PlattarIntegration();
 
-                                      
+                                            var zoomimage = document.querySelector('.zoomImg');
+	                                        zoomimage.style.display = 'none';
+
 
                                             var types = {
                                                 red: 'ec7161e0-9c1a-11eb-902c-717914ef9937',
@@ -1249,6 +1424,12 @@
                                             var qrimage = document.querySelector('#qrimage');
                                             qrimage.src = integration.qrUrl;
                                         });
+
+                                        function view360(){
+	                                        var zoomimage = document.querySelector('.zoomImg');
+                                            zoomimage.style.display = 'none';
+                                            QRCodeHide();
+                                        }
 
                                         
                                         function changeVariation(name){
@@ -1536,183 +1717,19 @@
                                 <div class="variation_buttons_wrapper">
                                     <div id="pa_color_buttons" class="variation_buttons" data-children-count="0">
                                       <a href="javascript:void(0);" class="position_before variation_button selected" id="bronze" rel="pa_color">
-                                        <span onclick='changeVariation("red");' class="phoen_swatches phoen_type_color" style="height: 32px; width: 32px; display: block; background-color: red"></span><span class="phoen_below_text">Red</span>
+                                        <span onclick='changeVariation("red");' class="phoen_swatches phoen_type_color" style="background-color: red"></span><span class="phoen_below_text">Red</span>
                                       </a>
                                       <a href="javascript:void(0);" class="position_before variation_button unselected" id="glass" rel="pa_color">
-                                        <span onclick='changeVariation("blue");' class="phoen_swatches phoen_type_color" style="height: 32px; width: 32px; display: block; background-color: blue"></span><span class="phoen_below_text">Blue</span>
+                                        <span onclick='changeVariation("blue");' class="phoen_swatches phoen_type_color" style="background-color: blue"></span><span class="phoen_below_text">Blue</span>
                                       </a>
                                       <a href="javascript:void(0);" class="position_before variation_button unselected" id="gold" rel="pa_color">
-                                        <span onclick='changeVariation("fabric");' class="phoen_swatches phoen_type_color" style="height: 32px; width: 32px; display: block; background-color: #b79f7c;"></span><span class="phoen_below_text">Fabric</span>
+                                        <span onclick='changeVariation("fabric");' class="phoen_swatches phoen_type_color" style="background-color: #e6dccd;"></span><span class="phoen_below_text">Fabric</span>
                                       </a>
                                      
                                      
                                     </div>
                                   </div>
-                                <div class="product-social-links">
-                                    <div class="product-extras store-lazboy">
-                                        <div class="product-storelocator-wrapper store-lazboy">
-    
-    
-    
-                                            <div class="price-selected">
-                                                <strong>Nice Choice!</strong>
-                                                <span>Your updated price will be: RRP <strong
-                                                        class="price-adjusted"></strong>
-                                                    <span class="custom-question tooltip">
-                                                        <span class="tooltip-text">
-                                                            The RRP or RRP with strike through (during promotions) was
-                                                            established by the Supplier and does not mean any La-Z-Boy
-                                                            Furniture Gallery store has offered or sold the product at
-                                                            this price. Some products may not be available in every
-                                                            La-Z-Boy Furniture Gallery store. Additional Freight may
-                                                            apply. </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div class="actions">
-                                                <button id="email-product" class="btn btn--light-blue-solid email-product">
-                                                    Email My Product </button>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-addto-links" data-role="add-to-links">
-                                        <a href="#" class="action towishlist"
-                                            data-post='{"action":"https:\/\/www.la-z-boy.co.nz\/wishlist\/index\/add\/","data":{"product":"129229","uenc":"aHR0cHM6Ly93d3cubGEtei1ib3kuY28ubnovZHVvci1jb2xvcmFkby0zLXNlYXRlci10d2luLXBvd2VyLXJlY2xpbmVy"}}'
-                                            data-action="add-to-wishlist"><span>Add to wishlist</span></a>
-                                        <script type="text/x-magento-init">
-                                            {
-            "body": {
-                "addToWishlist": {"productType":"configurable"}        }
-        }
-    </script>
-                                    </div>
-                                    <a href="/cdn-cgi/l/email-protection#112e6264737b7472652c5d706b737e68313c3175647ed3bf313c31527e7d7e6370757e314566787f31417e667463314374727d787f787f7631223142747065746337737e75682c59783d315831777e647f7531657978623161637e7564726531707f753165797e6476796531687e64317c78767965317d787a743178653179656561622b3e3e6666663f7d703c6b3c737e683f727e3f7f6b3e75647e633c727e7d7e6370757e3c223c6274706574633c6566787f3c617e6674633c6374727d787f7463"
-                                        class="action mailto friend"><span>Share</span></a>
-    
-                                    <a href="#" class="print" data-print-product>
-                                        <span>Print</span>
-                                    </a>
-                                    <a class="download" target="_blank"
-                                        onclick="if (!window.__cfRLUnblockHandlers) return false; gtag_report_conversion()"
-                                        href="https://www.la-z-boy.co.nz/media/pdf/nz/P4130-32PRH.pdf"
-                                        data-cf-modified-72c27c9ffc42671103542b4e-="">
-                                        <span>
-                                            Download Details </span>
-                                    </a>
-    
-    
-                                    <div class="addthis_inline_follow_toolbox"></div>
-                                    <script type="72c27c9ffc42671103542b4e-text/javascript"
-                                        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-596838211d7e4220">
-                                    </script>
-                                    <div class="popup-wrapper">
-                                        <div id="email-popup-overlay" class="email-popup-overlay">
-                                            <div class="pref-loading"></div>
-                                            <div class="dismiss custom-close-row">
-                                                <span class="custom-close"></span>
-                                            </div>
-                                            <h1>Send My Product</h1>
-                                            <span>Enter your details and we'll send you your customised La-Z-Boy details
-                                                today</span>
-                                            <form id="send-my-product">
-                                                <div class="fieldset">
-                                                    <div class="control mc-field-group field">
-                                                        <input type="text" class="required input-text" id="firstname"
-                                                            name="firstname" required />
-                                                        <label for="firstname" class="label filled">First Name </label>
-                                                    </div>
-                                                    <div class="control mc-field-group field">
-                                                        <input type="text" class="required input-text" id="lastname"
-                                                            name="lastname" required />
-                                                        <label for="lastname" class="label filled">Last Name </label>
-                                                    </div>
-                                                    <div class="control mc-field-group field">
-                                                        <input type="text" class="required input-text" id="email_address"
-                                                            name="email_address" required />
-                                                        <label for="email" class="label filled">Email </label>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" id="product" name="product"
-                                                    value="duo® - Colorado Twin Power Reclining 3 Seater" />
-                                                <input type="hidden" id="link" name="link"
-                                                    value="https://www.la-z-boy.co.nz/duor-colorado-3-seater-twin-power-recliner" />
-                                                <input type="hidden" id="material" name="material" />
-                                                <input type="hidden" id="covering" name="covering" />
-                                                <input type="hidden" id="upgrade" name="upgrade" />
-                                                <input type="hidden" id="price" name="price" />
-                                                <div class="fieldset">
-                                                    <div class="control mc-field-group field">
-                                                        <input type="checkbox" class="required" id="agree_to_terms"
-                                                            name="agree_to_terms" />
-                                                        <label><a class="terms"
-                                                                href="https://www.la-z-boy.co.nz/policies/privacy-policy/"
-                                                                target="_blank">I agree with La-Z-Boy Terms &
-                                                                Conditions</a></label>
-                                                    </div>
-                                                </div>
-                                                <div class="fieldset">
-                                                    <div class="control mc-field-group field">
-                                                        <button id="submit-send-product"
-                                                            class="btn btn--orange">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="popup-wrapper">
-                                        <div id="email-popup-success" class="email-popup-success">
-                                            <div class="dismiss custom-close-row">
-                                                <span class="custom-close"></span>
-                                            </div>
-                                            <div class="popup-success-row">
-                                                <span class="custom-tick-circle"></span>
-                                            </div>
-                                            <div class="popup-success-row">
-                                                <span>
-                                                    Thanks - details on your customised La-Z-Boy are on their way
-                                                </span>
-                                            </div>
-                                            <div class="popup-success-row">
-                                                
-                                            </div>
-                                            <div class="popup-success-row">
-                                                <span>or</span>
-                                            </div>
-                                            <div class="popup-success-row">
-                                                <button class="btn btn--light-blue dismiss" href="#">
-                                                    Close </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script type="text/x-magento-init">
-                                        {
-            "*": {
-                "Lazboy_Price/js/emailproduct": {
-                    "ajaxUrl": "https://www.la-z-boy.co.nz/price/index/index/"
-                }
-            }
-        }
-    </script>
-                                    <div class="brand-content banner-only-start">
-                                        <div class="banner"></div>
-                                    </div>
-                                    <script type="text/x-magento-init">
-                                        {
-            "*": {
-                "Lazboy_Price/js/brandcontent": {
-                    "*": "*"
-                }
-            }
-        }
-    </script>
-                                    <div class="ambanners ambanner-3" data-position="3" data-role="amasty-banner-container">
-                                    </div>
-                                    <div class="ambanners ambanner-6" data-position="6" data-role="amasty-banner-container">
-                                    </div>
-                                    <div class="ambanners ambanner-7" data-position="7" data-role="amasty-banner-container">
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                        
